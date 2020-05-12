@@ -1,7 +1,5 @@
 # Apex Continuations: Implementation and testing in Aura and Lighting Web Components
 
-This guide helps Salesforce developers who are new to Visual Studio Code go from zero to a deployed app using Salesforce Extensions for VS Code and Salesforce CLI.
-
 ## Installation with SFDX
 
 1. Set up your environment. If you haven't done it yet, follow the steps in the Quick Start: [Lightning Web Components Trailhead project](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/):
