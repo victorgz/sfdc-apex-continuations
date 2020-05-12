@@ -1,3 +1,8 @@
+/*************************************************************************************************************
+ * @description   Apex Continuation class for multiple callouts
+ * @author			  Victor Garcia Zarco <victor.gzarco@gmail.com>
+ * @date  			  12 / 05 / 2020
+ **************************************************************************************************************/
 public with sharing class ApexMultipleContinuation {
   // IMPORTANT: Variables used for testing, containing the reerences to the different Continuation requests
   @TestVisible
@@ -8,10 +13,12 @@ public with sharing class ApexMultipleContinuation {
   private final static Integer CONTINUATION_TIMEOUT_IN_SECONDS = 40;
   private final static String HTTP_REQUEST_ENDPOINT = 'callout:TestEndpoint';
 
-  /**
-   *  @description    Create the Continuation instance and start the defined callout
-   *  @returns        The Continuation object
-   */
+  /*********************************************************************************************************
+   * @description   Create the Continuation instance and start the defined callout
+   * @author			  Victor Garcia Zarco <victor.gzarco@gmail.com>
+   * @date  			  12 / 05 / 2020
+   * @return			  The Continuation object
+   **********************************************************************************************************/
   @AuraEnabled(continuation=true cacheable=true)
   public static Object startConinuation() {
     // Create the callout Request
@@ -33,12 +40,15 @@ public with sharing class ApexMultipleContinuation {
     return con;
   }
 
-  /**
-     *  @description    Call the Continuation callback, setting up the Continuation context
-     *  @param          Object state : private attribute of the Continuation object containing a reference to the Http Request
-                                        This variable can be used to pass data from the startContinuation() function to the callback function
-     *  @return         The response of the Continuation, that is sent to the client-side
-     */
+  /*********************************************************************************************************
+   * @description   The implementation of the Continuation callback
+   * @author			  Victor Garcia Zarco <victor.gzarco@gmail.com>
+   * @date  			  12 / 05 / 2020
+   * @param			    labels : a list containing the labels that identify each of the continuation callouts
+   * @param			    state : a private attribute of the Continuation object containing a reference to the Http Request. This variable is
+   *                        used to pass data from the startContinuation() function to the callback function
+   * @return			  The response of the Continuation callout
+   **********************************************************************************************************/
   @AuraEnabled(cacheable=true)
   public static Object continuationCallback(List<String> labels, Object state) {
     HttpResponse response1 = Continuation.getResponse(labels[0]);
