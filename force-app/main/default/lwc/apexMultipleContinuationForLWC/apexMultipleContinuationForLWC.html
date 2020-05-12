@@ -1,0 +1,15 @@
+<template>
+  <div class="slds-card slds-p-around_large">
+    <lightning-spinner if:true={isLoading} size="small"></lightning-spinner>
+
+    <h1 class="slds-text-heading_medium slds-p-bottom_x-small">
+      APEX Multiple Continuation
+    </h1>
+    <template for:each={result} for:item="item" for:index="index">
+      <div key={item.id} class="slds-p-bottom_medium">
+        <h2 class="slds-text-heading_small">HttpRequest #{index}</h2>
+        <code>{item}</code>
+      </div>
+    </template>
+  </div>
+</template>

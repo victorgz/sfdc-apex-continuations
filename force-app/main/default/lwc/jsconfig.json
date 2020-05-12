@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "c/apexSimpleContinuationForLWC": [
+        "apexSimpleContinuationForLWC/apexSimpleContinuationForLWC.js"
+      ],
+      "c/apexMultipleContinuationForLWC": [
+        "apexMultipleContinuationForLWC/apexMultipleContinuationForLWC.js"
+      ]
+    }
+  },
+  "include": ["**/*", "../../../../.sfdx/typings/lwc/**/*.d.ts"],
+  "typeAcquisition": {
+    "include": ["jest"]
+  }
+}

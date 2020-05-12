@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ApexContinuation</members>
+        <members>ApexContinuation_Test</members>
+        <members>ApexMultipleContinuation</members>
+        <members>ApexMultipleContinuation_Test</members>
+        <members>ApexSimpleContinuationPassingData</members>
+        <members>ApexSimpleContinuationPassingData_Test</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>apexMultipleContinuationForLWC</members>
+        <members>apexSimpleContinuationForLWC</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>TestEndpoint</members>
+        <name>NamedCredential</name>
+    </types>
+    <version>48.0</version>
+</Package>
