@@ -1,10 +1,10 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement } from 'lwc';
 import startContinuation from '@salesforce/apexContinuation/ApexMultipleContinuation.startConinuation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class ApexMultipleContinuationForLWC extends LightningElement {
-  @track result;
-  @track isLoading = true;
+  result;
+  isLoading = true;
 
   renderedCallback() {
     startContinuation()
