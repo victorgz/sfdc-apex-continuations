@@ -57,12 +57,12 @@ private class ApexMultipleContinuation_Test {
 
   @IsTest
   private static void testContinuationExceptionCapturedInFirstRequest() {
-    Continuation con = (Continuation) ApexContinuation.startConinuation();
+    Continuation con = (Continuation) ApexMultipleContinuation.startConinuation();
 
     // Verify that the continuation has the correct number of requests
     Map<String, HttpRequest> requests = con.getRequests();
     System.assertEquals(
-      1,
+      2,
       requests.size(),
       'The number of requests associated to the Continuation is not correct'
     );
@@ -86,9 +86,13 @@ private class ApexMultipleContinuation_Test {
       ApexMultipleContinuation.continuationLabel1,
       ApexMultipleContinuation.continuationLabel2
     };
+
     Boolean exceptionThrown = false;
     try {
-      Object result = ApexContinuation.continuationCallback(labels);
+      List<String> result = (List<String>) ApexMultipleContinuation.continuationCallback(
+        labels,
+        null
+      );
     } catch (AuraHandledException e) {
       exceptionThrown = true;
     }
@@ -102,12 +106,12 @@ private class ApexMultipleContinuation_Test {
 
   @IsTest
   private static void testHttpRequestExceptionCapturedInFirstRequest() {
-    Continuation con = (Continuation) ApexContinuation.startConinuation();
+    Continuation con = (Continuation) ApexMultipleContinuation.startConinuation();
 
     // Verify that the continuation has the correct number of requests
     Map<String, HttpRequest> requests = con.getRequests();
     System.assertEquals(
-      1,
+      2,
       requests.size(),
       'The number of requests associated to the Continuation is not correct'
     );
@@ -131,9 +135,13 @@ private class ApexMultipleContinuation_Test {
       ApexMultipleContinuation.continuationLabel1,
       ApexMultipleContinuation.continuationLabel2
     };
+
     Boolean exceptionThrown = false;
     try {
-      Object result = ApexContinuation.continuationCallback(labels);
+      List<String> result = (List<String>) ApexMultipleContinuation.continuationCallback(
+        labels,
+        null
+      );
     } catch (AuraHandledException e) {
       exceptionThrown = true;
     }
