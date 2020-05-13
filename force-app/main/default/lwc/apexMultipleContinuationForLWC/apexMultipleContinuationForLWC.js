@@ -6,7 +6,7 @@ export default class ApexMultipleContinuationForLWC extends LightningElement {
   result;
   isLoading = true;
 
-  renderedCallback() {
+  connectedCallback() {
     startContinuation()
       .then(result => {
         this.result = result;
